@@ -9,9 +9,7 @@ extension ARTree {
 
     var depth = 0
     while depth < key.count {
-      guard var node = current?.asNode(of: Value.self) else {
-        assert(false, "current node can never be nil")
-      }
+      var node = current!.asNode(of: Value.self)
 
       // Reached leaf already, replace it with a new node, or update the existing value.
       if node.type() == .leaf {
